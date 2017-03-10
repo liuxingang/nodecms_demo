@@ -1,0 +1,21 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "cms实战",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.14.0",
+    "mysql": "^2.12.0"
+  },
+  "dependencies": {
+    "async": "^2.1.5",
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.5",
+    "superagent": "^3.4.1"
+  }
+}

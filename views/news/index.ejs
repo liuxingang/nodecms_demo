@@ -1,0 +1,29 @@
+    <% include ../parts/header.ejs %>
+    <!--swiper-->
+    <div class="banner">
+        <img src="https://creditmanager.b0.upaiyun.com/f9d6cee715abd1c55175f3e44e8e44e2" alt="" width="100%">
+    </div>
+    
+    <div class="container m-wrap m-20 clearFloat">
+        <div class="left-sidebar">
+            <ul>
+                <li class="sidebar-head">关于我们</li>
+                <li class="sidebar-item <%= (url=='/companyNews') ? 'active' : ''%>"><a href="/news/companyNews">公司新闻</a></li>
+                <li class="sidebar-item <%= (url=='/tradeNews') ? 'active' : ''%>"><a href="/news/tradeNews">行业动态</a></li>
+
+            </ul>
+        </div>
+        <div class="right-wrap">
+            <div class="title">
+                <span><%=data.channelText%></span>
+            </div>
+            <div class="content">
+                <ul>
+                    <% for(var i=0;i<data.data.length;i++){%>
+                    <li><a href="/news/companyNews/<%=data.data[i].newsId%>"> <%=data.data[i].newsTitle%></a></li>
+                    <%}%>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <% include ../parts/footer.ejs %>
