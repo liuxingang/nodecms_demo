@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app ="mainApp">
+<head>
+    <meta charset="UTF-8">
+    <title>CMS后台管理系统</title>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            cms后台管理系统
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <div class="left-sidebar">
+            <dl>
+                <dt>公司介绍 <img src="/images/sidebar/select_xl01.png"></dt>
+                <dd class="menu_chioce"><a href="#">公司简介</a></dd>
+                <dd class="menu_chioce"><a href="#">发展历程</a></dd>
+                <dd class="menu_chioce"><a href="#">文化理念</a></dd>
+                <dd class="menu_chioce"><a href="#">联系我们</a></dd>
+            </dl>
+            <dl>
+                <dt>公司简介 <img src="/images/sidebar/select_xl01.png"></dt>
+                <dd class="menu_chioce"><a href="#"></a></dd>
+                <dd class="menu_chioce"><a href="#">充值记录</a></dd>
+                <dd class="menu_chioce"><a href="#">充值记录</a></dd>
+                <dd class="menu_chioce"><a href="#">充值记录</a></dd>
+            </dl>
+            <dl>
+                <dt>新闻列表 <img src="/images/sidebar/select_xl01.png"></dt>
+                <dd class="menu_chioce"><a href="#">充值记录</a></dd>
+                <dd class="menu_chioce"><a href="#">充值记录</a></dd>
+                <dd class="menu_chioce"><a href="#">充值记录</a></dd>
+            </dl>
+
+        </div>
+
+        <div class="main-container">
+            <div style="width: 1000px;margin: 50px auto;" ui-view></div>
+        </div>
+    </div>
+
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/lib/angular/angular.min.js"></script>
+    <script src="/lib/angular/angular-ui-router.min.js"></script>
+    <script src="/admin/controller/router.js"></script>
+    <script src="/admin/controller/controller.js"></script>
+    <script>
+        $(function(){
+            $(".left-sidebar dt img").attr("src","/images/sidebar/select_xl01.png");
+            $(".left-sidebar dt").click(function(){
+                $(".left-sidebar dt").css({"background-color":"transparent"})
+                $(this).css({"background-color": "#3B4346"});
+                $(".left-sidebar dt img").attr("src","images/sidebar/select_xl01.png");
+                $(this).parent().find('img').attr("src","images/sidebar/select_xl.png");
+                $(this).parent().find('dd').slideToggle();
+            });
+        })
+    </script>
+</body>
+</html>

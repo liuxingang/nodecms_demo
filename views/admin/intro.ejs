@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CMS-后台管理</title>
+    <link rel="stylesheet" type="text/css" href="/admin/lib/jquery-easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="/admin/lib/jquery-easyui/themes/icon.css">
+    <!--<link rel="stylesheet" type="text/css" href="/admin/lib/jquery-easyui/demo/demo.css">-->
+    <link rel="stylesheet" type="text/css" href="/admin/css/main.css">
+    <script type="text/javascript" src="/admin/lib/jquery-easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="/admin/lib/jquery-easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/admin/js/jqui-main.js"></script>
+</head>
+<body>
+    <table id="dg" title="My Users" style="width:550px;height:250px"
+           toolbar="#toolbar" idField="id"
+           data-options="url:'/api/v1/company?channelName=intro',fitColumns:true,singleSelect:true" >
+        <thead>
+        <tr>
+            <th field="channelName" width="50" editor="{type:'validatebox',options:{required:true}}">channelName</th>
+            <th field="content" width="50" editor="{type:'validatebox',options:{required:true}}">content</th>
+            <th field="date" width="50" editor="text">date</th>
+            <th field="author" width="50" editor="{type:'validatebox',options:{validType:'email'}}">author</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>dddd</td>
+                <td>dddd</td>
+                <td>dddd</td>
+                <td>dddd</td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="toolbar">
+        <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:$('#dg').edatagrid('addRow')">New</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="javascript:$('#dg').edatagrid('destroyRow')">Destroy</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:$('#dg').edatagrid('saveRow')">Save</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="javascript:$('#dg').edatagrid('cancelRow')">Cancel</a>
+    </div>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+//        $('#dg').edatagrid({
+//            url: '/api/v1/company?channelName=intro',
+//
+//        });
+    })
+
+</script>

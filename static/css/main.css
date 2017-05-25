@@ -1,6 +1,7 @@
 html,body,.wrapper{
     width:100%;
     height:100%;
+    overflow: auto;
 }
 dl,dt,dd{display:block;margin:0;}
 a{text-decoration:none;}
@@ -19,6 +20,7 @@ header .logo{
     width:160px;
     background: #222d31;
     color:#fff;
+    float: left;
 }
 .left-sidebar dt{
     position: relative;
@@ -39,3 +41,20 @@ header .logo{
 .menu_chioce{
     display: none;
 }
+
+.main-container{
+    margin-left: 160px;
+    min-width: 1000px;
+}
+
+.main-container table th,.main-container table td{
+    text-align: center;
+}
+.main-container .content{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+
+}
+

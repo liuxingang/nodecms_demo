@@ -1,57 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>CMS后台管理系统</title>
-    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet">
+    <title>CMS-后台管理</title>
+    <link rel="stylesheet" type="text/css" href="/admin/lib/jquery-easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="/admin/lib/jquery-easyui/themes/icon.css">
+    <!--<link rel="stylesheet" type="text/css" href="/admin/lib/jquery-easyui/demo/demo.css">-->
+    <link rel="stylesheet" type="text/css" href="/admin/css/main.css">
+    <script type="text/javascript" src="/admin/lib/jquery-easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="/admin/lib/jquery-easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/admin/js/jqui-main.js"></script>
 </head>
-
 <body>
-    <header>
-        <div class="logo">
-            cms后台管理系统
+    <!--<header>-->
+        <!--<div class="logo">-->
+            <!--cms后台管理系统-->
+        <!--</div>-->
+    <!--</header>-->
+
+    <div class="easyui-layout" style="width:100%;height:100%;">
+        <div data-options="region:'north'" style="height:50px"></div>
+        <div data-options="region:'south',split:true" style="height:50px;"></div>
+        <div data-options="region:'west',split:true" title="菜单" style="width:160px;">
+            <div class="easyui-accordion" data-options="fit:true,border:false">
+                <div title="关于我们" style="padding:10px;">
+                    <ul class="sider-nav">
+                        <li>
+                            <a href="#" onclick="addTab('企业简介','/admin/intro')">企业简介</a>
+                        </li>
+                        <li>
+                            <a href="">发展历程</a>
+                        </li>
+                        <li>
+                            <a href="">文化理念</a>
+                        </li>
+                        <li>
+                            <a href="">联系我们</a>
+                        </li>
+                    </ul>
+                </div>
+                <div title="新闻动态" data-options="selected:true" style="padding:10px;">
+                    <ul class="sider-nav">
+                        <li>
+                            <a href="">公司新闻</a>
+                        </li>
+                        <li>
+                            <a href="">行业动态</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </header>
-
-    <div class="wrapper">
-        <div class="left-sidebar">
-            <dl>
-                <dt>系统记录 <img src="/images/sidebar/select_xl01.png"></dt>
-                <dd class="menu_chioce"><a href="#">充值记录</a></dd>
-                <dd class="menu_chioce"><a href="#">充值记录</a></dd>
-                <dd class="menu_chioce"><a href="#">充值记录</a></dd>
-            </dl>
-            <dl>
-                <dt>公司简介 <img src="/images/sidebar/select_xl01.png"></dt>
-                <dd class="menu_chioce"><a href="#"></a></dd>
-                <dd class="menu_chioce"><a href="#">充值记录</a></dd>
-                <dd class="menu_chioce"><a href="#">充值记录</a></dd>
-                <dd class="menu_chioce"><a href="#">充值记录</a></dd>
-            </dl>
-            <dl>
-                <dt>新闻列表 <img src="/images/sidebar/select_xl01.png"></dt>
-                <dd class="menu_chioce"><a href="#">充值记录</a></dd>
-                <dd class="menu_chioce"><a href="#">充值记录</a></dd>
-                <dd class="menu_chioce"><a href="#">充值记录</a></dd>
-            </dl>
-
+        <div data-options="region:'center',title:'Main Title',iconCls:'icon-ok'">
+            <div id='n-tab-wrapper' class="easyui-tabs" data-options="fit:true,border:false,plain:true">
+                <div title="About" data-options="href:''" style="padding:10px"></div>
+                <div title="DataGrid" style="padding:5px">
+                    <table class="easyui-datagrid"
+                           data-options="url:'',method:'get',singleSelect:true,fit:true,fitColumns:true">
+                        <thead>
+                        <tr>
+                            <th data-options="field:'itemid'" width="80">Item ID</th>
+                            <th data-options="field:'productid'" width="100">Product ID</th>
+                            <th data-options="field:'listprice',align:'right'" width="80">List Price</th>
+                            <th data-options="field:'unitcost',align:'right'" width="80">Unit Cost</th>
+                            <th data-options="field:'attr1'" width="150">Attribute</th>
+                            <th data-options="field:'status',align:'center'" width="50">Status</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
-
-    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script>
-        $(function(){
-            $(".left-sidebar dt img").attr("src","/images/sidebar/select_xl01.png");
-            $(".left-sidebar dt").click(function(){
-                $(".left-sidebar dt").css({"background-color":"transparent"})
-                $(this).css({"background-color": "#3B4346"});
-                $(".left-sidebar dt img").attr("src","images/sidebar/select_xl01.png");
-                $(this).parent().find('img').attr("src","images/sidebar/select_xl.png");
-                $(this).parent().find('dd').slideToggle();
-            });
-        })
-    </script>
 </body>
 </html>

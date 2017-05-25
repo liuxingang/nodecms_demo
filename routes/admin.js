@@ -9,6 +9,12 @@ router.get('/admin',function(req,res){
 
 });
 
+router.get('/admin/intro',function(req,res){
+
+    res.render('admin/intro',{title:"后台"})
+
+});
+
 
 module.exports = router;
 // exports.router = router;
